@@ -140,24 +140,24 @@ private $apophem;
 }
 
 class Circle extends Figure
+{
+    private $radius;
+    function __construct($r = 0)
     {
-        private $radius;
-        function __construct($r = 0)
-        {
-            $this->type = '';
-            $r = floatval($r);
-            if ($r > 0) {
-                $this->type = 'Circle';
-                $this->radius = $r;
-            }    
-        }
-
-        public function getArea()
-        {
-            if (!$this->type) {
-                return 0;
-            }
-            return M_PI * $this->radius * $this->radius;
+        $this->type = '';
+        $r = floatval($r);
+        if ($r > 0) {
+            $this->type = 'Circle';
+            $this->radius = $r;
         }
     }
+
+    public function getArea()
+    {
+        if (!$this->type) {
+            return 0;
+        }
+        return M_PI * $this->radius * $this->radius;
+    }
+}
 ?>
