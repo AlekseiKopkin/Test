@@ -1,0 +1,25 @@
+﻿База данных будет состоять из трёх таблиц
+
+	books (bookID, bookTitle, bookAge);
+	authors (authorID, authorName, authorAge);
+	indexes (bookID, authorID);
+
+	CREATE TABLE books (
+	bookID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	bookTitle VARCHAR(255) NOT NULL,
+	bookAge INT(4)  NOT NULL,
+	);
+
+	CREATE TABLE authors (
+	authorID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	authorName VARCHAR(255) NOT NULL,
+	authorAge INT(4) NOT NULL,
+	);
+
+	CREATE TABLE indexes (
+	bookID INT(6) NOT NULL,
+	authorID INT(6) NOT NULL,
+	);
+
+SQL-запрос, который выведет авторов, написавших меньше 7 книг.
+SELECT authorID, authorName, authorAge FROM books WHERE count_books<7
